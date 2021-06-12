@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Dashboard from './layouts/Dashboard';
+import Navi from './layouts/Navi.js'
+import {Container,Message } from 'semantic-ui-react'
+import 'semantic-ui-css/semantic.min.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <Message
+   color="blue"
+    info
+    header='Siteye Hoşgeldin!'
+    content="Şu anda yapım aşamasında..."
+  />
+       <Navi></Navi>
+       <Container className="main">
+       <Dashboard></Dashboard>
+       </Container>
+    
+     
     </div>
   );
 }
