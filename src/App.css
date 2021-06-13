@@ -12,4 +12,13 @@
 .extra{
   text-align: center;
 }
-
+.footer{
+  margin-top: 4rem;
+  padding: 5rem;
+  background-color: rgb(38, 48, 54);
+  position:  static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  color: aliceblue;
+}

@@ -15,3 +15,13 @@ code {
         {
         width:1010px;
         }
+        .footer{
+          margin-top: 4rem;
+          padding: 5rem;
+          background-color: rgb(38, 48, 54);
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          color: aliceblue;
+        }

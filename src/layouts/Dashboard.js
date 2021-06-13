@@ -6,6 +6,7 @@ import { Grid} from 'semantic-ui-react'
 import { Route } from 'react-router';
 import JobAdvertDetail from '../pages/JobAdvertDetail';
 import Login from '../pages/Login';
+import Footer from './Footer'
 
 
 export default function Dashboard() {
@@ -25,12 +26,12 @@ export default function Dashboard() {
                         <Route  path="/login" component={Login}/>
                      
                     
-                   
+                        
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
           
-            
+          
 
            
         </div>
