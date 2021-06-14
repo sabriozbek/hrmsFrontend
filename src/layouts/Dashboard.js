@@ -7,6 +7,7 @@ import { Route } from 'react-router';
 import JobAdvertDetail from '../pages/JobAdvertDetail';
 import Login from '../pages/Login';
 import Footer from './Footer'
+import CandidateList from '../pages/CandidateList';
 
 
 export default function Dashboard() {
@@ -24,7 +25,8 @@ export default function Dashboard() {
                         <Route  path="/jobadvert/:id" component={JobAdvertDetail}/>
 
                         <Route  path="/login" component={Login}/>
-                     
+                        <Route  path="/candidate" component={CandidateList}/>
+
                     
                         
                     </Grid.Column>

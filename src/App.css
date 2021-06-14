@@ -19,12 +19,12 @@
   
   width: 100vw;
 
-  position: relative;
+  position: initial;
   bottom: 0;
   height: 2.5rem;  
   margin-top: 5rem;
-  padding: 8rem;
-  background-color: rgb(189, 177, 161);
-  color: rgb(0, 0, 0);
+  padding: 6rem;
+  background-color: rgb(40, 42, 44);
+  color: rgb(255, 255, 255);
 }
 

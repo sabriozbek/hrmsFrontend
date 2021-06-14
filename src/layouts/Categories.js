@@ -20,8 +20,8 @@ export default function Categories() {
           name='İş Pozisyonları'
          
         />
-        <Menu.Item
-          name='İş Verenler'
+        <Menu.Item as={NavLink} to="/candidate"
+          name='İş Arayanlar'
       
         />
       </Menu>
