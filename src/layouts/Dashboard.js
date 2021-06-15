@@ -8,6 +8,7 @@ import JobAdvertDetail from '../pages/JobAdvertDetail';
 import Login from '../pages/Login';
 import Footer from './Footer'
 import CandidateList from '../pages/CandidateList';
+import CvList from '../pages/CvList';
 
 
 export default function Dashboard() {
@@ -23,6 +24,7 @@ export default function Dashboard() {
                         <Route  exact path="/jobadvert" component={JobAdvertList}/>
                         <Route  exact path="/jobposition" component={JobPositionList}/>
                         <Route  path="/jobadvert/:id" component={JobAdvertDetail}/>
+                        <Route  path="/cvs/:id" component={CvList}/>
 
                         <Route  path="/login" component={Login}/>
                         <Route  path="/candidate" component={CandidateList}/>
