@@ -17,7 +17,7 @@ let jobadverts =new JobAdvertService()
     return (
      
         <div>
-           <h1>İş İlanları</h1>
+           <h1 className="h1">İş İlanları</h1>
     {
       jobAdverts.map((JobAdvert)=>(
          

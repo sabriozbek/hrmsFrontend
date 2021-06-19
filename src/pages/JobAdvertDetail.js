@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import JobAdvertService from '../services/jobAdvertService';
-import { List } from 'semantic-ui-react'
+import { FormField, List,Button ,Form} from 'semantic-ui-react'
 
 export default function JobAdvertDetail() {
 
@@ -15,9 +15,18 @@ let jobAdvertService =new JobAdvertService()
   },[])
     return (
         <div>
-            <h1>İlan Detayları</h1>
+            <h1 className="h1">İlan Detayları</h1>
             <h4>{jobAdvert.jobPositon?.position}</h4>
-            İlan No:{id}
+             İlan No:{id}
+             <div style={{paddingBlockStart:25}}>
+             <Button.Group attached='top'>
+      <Button positive animated>{jobAdvert.workTime?.name}  </Button>
+      <Button secondary animated>{jobAdvert.workPlace?.name} </Button>
+    </Button.Group>
+    
+    
+             </div>
+             <hr />
             <p >Oluşturulma Tarihi: {jobAdvert.createDate}</p>
            <p>{jobAdvert.description}</p> 
            <b>Maaş Aralığı:</b>{jobAdvert.minsalary}<a>/</a>{jobAdvert.maxSalary}
@@ -31,8 +40,10 @@ let jobAdvertService =new JobAdvertService()
     />
     <List.Item
       icon='linkify'
-      content={<a href={'jobAdvert.employer?.webSite'}>{jobAdvert.employer?.webSite}</a>}
       
+      content= {<a href={"https://"+jobAdvert.employer?.webSite} target={"_blank"} rel="noopener noreferrer">{jobAdvert.employer?.webSite}</a> }
+
+
     />
   </List>
         </div>

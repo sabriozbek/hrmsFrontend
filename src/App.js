@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
    <Message
-   color="blue"
+   color="red"
     info
     header='Siteye Hoşgeldin!'
     content="Şu anda yapım aşamasında..."

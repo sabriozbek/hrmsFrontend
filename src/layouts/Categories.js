@@ -6,21 +6,25 @@ export default function Categories() {
   
     return (
       
-        <div>
+        <div > 
           <h3>Kategoriler</h3>
           <br></br>
-            <Menu pointing secondary vertical floated>
-        <Menu.Item as={NavLink} to="/jobadvert"
+            <Menu pointing secondary vertical floated className="categoryBox" >
+        <Menu.Item as={NavLink} to="/jobadvert" 
+        icon="bullhorn"
           name='İş İlanları'
       
 
     
         />
         <Menu.Item as={NavLink} to="/jobposition"
+        icon="clipboard list
+        "
           name='İş Pozisyonları'
          
         />
         <Menu.Item as={NavLink} to="/candidate"
+icon="user"
           name='İş Arayanlar'
       
         />

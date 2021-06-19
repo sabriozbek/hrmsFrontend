@@ -6,4 +6,7 @@ getJobAdverts(){
 getByJobAdvertId(jobAdvertId){
     return axios.get("http://localhost:8080/api/jobAdverts/getByJobAdvertId?jobAdvertId="+jobAdvertId)
 }
+addJobAdvert(values){
+return axios.get("http://localhost:8080/api/jobAdverts/add",values)
+}
 }

@@ -12,7 +12,7 @@ export default function JobPositionList() {
     },[])
     return (
         <div>
-            <h1>İş Pozisyonları</h1>
+            <h1 className="h1">İş Pozisyonları</h1>
     {
       jobPositions.map((jobPositon)=>(
         <Card.Group itemsPerRow="1" key={jobPositon.id}>

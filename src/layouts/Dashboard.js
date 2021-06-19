@@ -9,6 +9,7 @@ import Login from '../pages/Login';
 import Footer from './Footer'
 import CandidateList from '../pages/CandidateList';
 import CvList from '../pages/CvList';
+import JobAdvertAdd from '../pages/JobAdvertAdd';
 
 
 export default function Dashboard() {
@@ -29,7 +30,8 @@ export default function Dashboard() {
                         <Route  path="/login" component={Login}/>
                         <Route  path="/candidate" component={CandidateList}/>
 
-                    
+                        <Route  path="/jobAdvertAdd" component={JobAdvertAdd}/>
+
                         
                     </Grid.Column>
                 </Grid.Row>
