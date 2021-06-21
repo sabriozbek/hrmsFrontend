@@ -46,14 +46,14 @@ export default function CandidateList() {
         <Grid.Row className="cardList">
           <Grid.Column    >  
          
-        <Card.Group >
+        <Card.Group key={candidate.id}>
         
         <Card  >
-               
+       
         {cvs.photos?.map((photo) => (
 
 
-        <Image src={photo.photoUrl}  wrapped ui={false} />))}
+        <Image src={photo?.photoUrl}  wrapped ui={false} />))}
         <Card.Content >
           <Card.Header >{candidate.firtsName} {candidate.lastName}</Card.Header>
           <Card.Meta>

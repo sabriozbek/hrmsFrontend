@@ -98,7 +98,8 @@ export default function JobAdvertAdd() {
         <div>
 
             <h1 className="h1">İlan Oluştur</h1>
-
+<hr></hr>
+<br></br>
             <Form onSubmit={formik.handleSubmit} >
                 <Form.Group widths='equal' >
                     <Form.Field

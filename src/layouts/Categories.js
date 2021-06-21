@@ -28,6 +28,12 @@ icon="user"
           name='İş Arayanlar'
       
         />
+
+<Menu.Item as={NavLink} to="/jobAdvertConfirm"
+icon="edit"
+          name='İş İlanı Onayları'
+      
+        />
       </Menu>
         </div>
     )

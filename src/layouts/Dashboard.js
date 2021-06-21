@@ -6,10 +6,10 @@ import { Grid} from 'semantic-ui-react'
 import { Route } from 'react-router';
 import JobAdvertDetail from '../pages/JobAdvertDetail';
 import Login from '../pages/Login';
-import Footer from './Footer'
 import CandidateList from '../pages/CandidateList';
 import CvList from '../pages/CvList';
 import JobAdvertAdd from '../pages/JobAdvertAdd';
+import JobAdvertConfirm from '../pages/JobAdvertConfirm';
 
 
 export default function Dashboard() {
@@ -32,14 +32,19 @@ export default function Dashboard() {
 
                         <Route  path="/jobAdvertAdd" component={JobAdvertAdd}/>
 
-                        
+                        <Route  path="/jobAdvertConfirm" component={JobAdvertConfirm}/>
+
                     </Grid.Column>
                 </Grid.Row>
+                
             </Grid>
-          
-
+            
+            
            
         </div>
         
+        
+        
+       
     )
 }

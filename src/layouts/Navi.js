@@ -32,30 +32,33 @@ function handleSignIn(){
         <div >
              
              <Segment secondary floated >
-        <Menu  secondary    >
+        <Menu      stackable secondary tabular borderless>
           <Container > 
-        <Menu.Item >
+        <Menu.Item className="logoTxt" name='HRMS'>
           
-          <img src={logo} alt="logo" />
         </Menu.Item>
          
           <Menu.Item as={NavLink} to="/"
             name='Ana Sayfa'
-          
+          className="navbar"
           />
           <Menu.Item as={NavLink} to="/jobadvert"
             name='İş İlanları'
+            className="navbar"
        
           />
-          <Menu.Item as={NavLink} to="/candidate"
+          <Menu.Item as={NavLink} to="/candidate" 
             name='İş Arayanlar'
+            className="navbar"
         
           />
+          <Menu.Item    secondary   as={NavLink} to='/jobAdvertAdd'
+name='İlan Ekle'      
+className="navbar"
+icon="add square" 
+   />
 <Menu.Menu position='right' >
-<Button   secondary   as={NavLink} to='/jobAdvertAdd'>
-     İlan Ekle
-     
-   </Button>
+
   {isAuthenticated?<SignedIn signOut={handleSignOut}/>
   :<SignedOut signIn={handleSignIn}/>}
 
