@@ -16,7 +16,7 @@ function App() {
   />
        <Navi></Navi>
        <Container className="main">
-       <Dashboard></Dashboard>
+      <Dashboard></Dashboard>
        </Container>
        <Divider></Divider>
        <Footer></Footer>

@@ -7,7 +7,7 @@ import WorkTimeService from "../services/workTimeService";
 import WorkPlaceService from "../services/workPlaceService";
 import JobAdvertService from '../services/jobAdvertService';
 import JobPositionService from "../services/jobPositionService";
-import { useHistory } from "react-router-dom";
+import swal from 'sweetalert';
 
 export default function JobAdvertAdd() {
     let jobAdvertService = new JobAdvertService();
@@ -20,10 +20,10 @@ export default function JobAdvertAdd() {
         cityId: Yup.string().required("Bu alan boş geçilemez."),
         minSalary: Yup.number().min(0, "0 ve üstü olmalıdır.").required("Bu alan boş geçilemez."),
         maxSalary: Yup.number().min(0, "0 ve üstü olmalıdır.").required("Bu alan boş geçilemez."),
-        lastDate: Yup.date().nullable().required("Bu alan boş geçilemez."),
+        applicaitonDeadlineDate: Yup.date().nullable().required("Bu alan boş geçilemez."),
 
     });
-    const history = useHistory();
+   
 
     const formik = useFormik({
         initialValues: {
@@ -31,18 +31,30 @@ export default function JobAdvertAdd() {
             jobPositionId: "",
             workTimeId: "",
             workPlaceId: "",
-            openPositions: "",
+            openPositionCount: "",
             cityId: "",
             minSalary: "",
             maxSalary: "",
-            lastDate: "",
+            applicaitonDeadlineDate: "",
+            
         },
         validationSchema: JobAdvertView,
         onSubmit: (values) => {
+
+            
+
             values.employerId = 30;
-            jobAdvertService.addJobAdvert(values).then((result) => console.log(result.data.data));
-            alert("İş ilanı başarıyla eklenmiştir.")
-            history.push("/jobadvert")
+            
+
+
+            jobAdvertService.addJobAdvert(values).then((result) => console.log(result)).then(swal({
+
+                title:"Başarılı",
+                text:"İş ilanı başarıyla eklenmiştir.",
+                icon:"success",
+                button:"Ok"
+            }).then(function(){window.location.reload()}));;
+            
 
         },
 
@@ -77,8 +89,8 @@ export default function JobAdvertAdd() {
         text: workPlace.name,
         values: workPlace.id,
     }));
-    const cityOption = cities.map((city, index) => ({
-        key: index,
+    const cityOption = cities.map((city, id) => ({
+        key: id,
         text: city.cityName,
         values: city.id,
     }));
@@ -92,7 +104,7 @@ export default function JobAdvertAdd() {
         formik.setFieldValue(fieldName, value);
     }
 
-
+    
 
     return (
         <div>
@@ -268,18 +280,18 @@ export default function JobAdvertAdd() {
                     <FormField>
                         <label>Açık Pozisyon:</label>
                         <Input
-                            id="openPositions"
-                            name="openPositions"
-                            error={Boolean(formik.errors.openPositions)}
+                            id="openPositionCount"
+                            name="openPositionCount"
+                            error={Boolean(formik.errors.openPositionCount)}
                             onChange={formik.handleChange}
-                            value={formik.values.openPositions}
+                            value={formik.values.openPositionCount}
                             onBlur={formik.handleBlur}
                             type="number"
                             placeholder="Açık Pozisyon"
 
                         />
-                        {formik.errors.openPositions && formik.touched.openPositions && (
-                            <div className={"ui pointing red basic label"}>{formik.errors.openPositions}</div>
+                        {formik.errors.openPositionCount && formik.touched.openPositionCount && (
+                            <div className={"ui pointing red basic label"}>{formik.errors.openPositionCount}</div>
 
                         )}
                     </FormField>
@@ -288,20 +300,21 @@ export default function JobAdvertAdd() {
                         <label>Son Başvuru Tarihi</label>
                         <Input
                             type="date"
-                            error={Boolean(formik.errors.lastDate)}
+                            
+                            error={Boolean(formik.errors.applicaitonDeadlineDate)}
                             onChange={(event, data) =>
 
-                                handleChangeSemantic(data.value, "lastDate")
+                                handleChangeSemantic(data.value, "applicaitonDeadlineDate")
                             }
-                            value={formik.values.lastDate}
+                            value={formik.values.applicaitonDeadlineDate}
                             onBlur={formik.handleBlur}
-                            name="lastDate"
+                            name="applicaitonDeadlineDate"
                             placeholder="Son Başvuru tarihi"
 
                         />
-                        {formik.errors.lastDate && formik.touched.lastDate && (
+                        {formik.errors.applicaitonDeadlineDate && formik.touched.applicaitonDeadlineDate && (
 
-                            <div className={"ui pointing red basic label"}>{formik.errors.lastDate}</div>
+                            <div className={"ui pointing red basic label"}>{formik.errors.applicaitonDeadlineDate}</div>
                         )}
 
 
@@ -331,13 +344,11 @@ export default function JobAdvertAdd() {
 
 
 
-                <Form.Field
-                    control={Checkbox}
-                    label='İlanın herkese açık olacağını kabul ediyorum.'
-                />
+                
 
                 <Form.Field >
                     <Button
+                    animated
                         content="Oluştur"
                         labelPosition="left"
                         icon="add"
